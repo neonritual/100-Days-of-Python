@@ -1,6 +1,6 @@
 ### 100-Days-of-Python
 
-#Exercises as I work through 100 Days of Code - The Complete Python Pro Bootcamp :SMILECAT:
+#Exercises as I work through 100 Days of Code - The Complete Python Pro Bootcamp 😸
 
 #As seen at：https://www.udemy.com/course/100-days-of-code
 
