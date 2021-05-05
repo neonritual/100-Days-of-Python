@@ -1,3 +1,5 @@
+from art import logo
+
 MENU = {
     "espresso": {
         "ingredients": {
@@ -30,7 +32,8 @@ resources = {
     "coffee": 100,
 }
 
-in_stock = True
+print(logo)
+
 
 def start_coffee_maker():
     total_money_in = 0
