@@ -1,27 +1,36 @@
 from turtle import Turtle, Screen
 import time
 from player import Player
+from car_manager import CarManager
 
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
-screen.listen()
 
-turtle = Player()
-screen.onkeypress(turtle.move_player(), "Up")
+car_manager = CarManager()
+player = Player()
+
+#TODO: Create turtle that starts at bottom, listens for the UP key and moves upwards. (step 3)
+screen.listen()
+screen.onkey(player.move_player, "Up")
+
+
+loop_count = 6
 
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
+    car_manager.move_cars()
     screen.update()
+    loop_count -= 1
+    if loop_count == 0:
+        car_manager.new_car()
+        loop_count = 6
 
-
-
-#TODO: Create turtle that starts at bottom, listens for the UP key and moves upwards. (step 3)
-#TODO: Create Cars 20px by 40px randomly generated along the y axis and move to the left of the screen.
-# No cars should be generated in the top and bottom 50px of the screen (hint: gen new car only every
-# 6th time the game loop runs.) (step 4 vid)
 #TODO: Detect when the turtle player collides with a car and stop the game if this happens. (step 5)
+
+
+
 #TODO: Detect when the turtle player has reached the top (FINISH_LINE_Y). When this happens,
 # return turtle to start and increase speed of cards. (hint: maybe create an attibute and using the
 # MOVE_INCREMENT to increase car speed.) (step 6)
