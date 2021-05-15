@@ -8,6 +8,7 @@ FINISH_LINE_Y = 280
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
+screen.title("TURTLE CROSSING")
 
 car_manager = CarManager()
 player = Player()
@@ -38,7 +39,6 @@ while game_is_on:
 
 #TODO: Detect when the turtle player collides with a car and stop the game if this happens. (step 5)
 
-
     for x in car_list:
         if x.distance(player) <= 20:
             scoreboard.game_over()
@@ -48,13 +48,17 @@ while game_is_on:
 # return turtle to start and increase speed of cards. (hint: maybe create an attibute and using the
 # MOVE_INCREMENT to increase car speed.) (step 6)
 
+    # TODO: Create scoreboard that keeps track of the users level. When the turtle hits a car,
+    # GAME OVER should be displayed in the middle. (step 7)
+
     if player.ycor() >= 280:
         car_manager.speed_up()
+        player.return_to_start()
+        scoreboard.increase_score()
 
 
 
-#TODO: Create scoreboard that keeps track of the users level. When the turtle hits a car,
-# GAME OVER should be displayed in the middle. (step 7)
+
 
 
 

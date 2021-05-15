@@ -16,6 +16,8 @@ class Player(Turtle):
         self.color("green")
     def move_player(self):
         self.forward(10)
+    def return_to_start(self):
+        self.goto(STARTING_POSITION)
 
 
 
