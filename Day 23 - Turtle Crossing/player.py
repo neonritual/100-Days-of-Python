@@ -1,4 +1,5 @@
 from turtle import Turtle
+from car_manager import CarManager
 STARTING_POSITION = (0, -280)
 MOVE_DISTANCE = 10
 FINISH_LINE_Y = 280
@@ -14,5 +15,9 @@ class Player(Turtle):
         self.goto(STARTING_POSITION)
         self.color("green")
     def move_player(self):
-        self.forward(MOVE_DISTANCE)
+        self.forward(10)
+
+
+
+
 
