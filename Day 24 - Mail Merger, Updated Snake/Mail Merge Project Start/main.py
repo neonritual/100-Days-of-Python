@@ -17,7 +17,6 @@ with open('./Input/Letters/starting_letter.txt') as letter_file:
 
 name_number = 0
 
-
 for _ in range(number_of_names):
     fixed_letter = []
     for old_name in letter_text:
