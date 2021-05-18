@@ -27,6 +27,19 @@ data_dict = {
     "Count": [black_count, gray_count, cinnamon_count]
 }
 #Creating the new data...
-fresh_data = pandas.DataFrame(data_dict)
+# fresh_data = pandas.DataFrame(data_dict)
 #... and adding it to a new csv file.
-fresh_data.to_csv("new_data.csv")
+# fresh_data.to_csv("new_data.csv")
+
+
+#####################
+## Below is the teacher's solution to the same challenge. Since it's so different and cool
+# I'm typing it along for study purposes. (aka to future me, you didn't make this.. hah.
+
+# import pandas
+# data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+# grey_squirrels_count = len(data[data["Primary Fur Color"] == "Gray"])
+# red_squirrels_count = len(data[data["Primary Fur Color"] == "Cinnamon"])
+# black_squirrels_count = len(data[data["Primary Fur Color"] == "Black"])
+
+#.. and the rest the same as myself.
