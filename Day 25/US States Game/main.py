@@ -25,7 +25,7 @@ state_dict = {
 }
 
 while game_is_on == True:
-    user_guess = screen.textinput(title="test input", prompt="Name a state! (or 'exit' to end the game)").title() #getting user input
+    user_guess = screen.textinput(title=f"States Guessed: {states_count}/50a", prompt="Name a state! (or 'exit' to end the game)").title() #getting user input
     if data['state'].str.contains(user_guess).any() and user_guess not in already_guessed:
         #check answer again list of states and guessed list
         get_state_row = data[data.state == user_guess]
