@@ -96,7 +96,7 @@ reset_button.grid(row=3, column=3)
 
 
 
-# text="✓", bg=YELLOW,
+
 
 
 
