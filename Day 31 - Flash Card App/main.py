@@ -1,6 +1,9 @@
 import tkinter as tk
+
+import pandas
 import pandas as pd
 import random
+import os
 
 BACKGROUND_COLOR = "#B1DDC6"
 
@@ -12,17 +15,36 @@ window.config(bg=BACKGROUND_COLOR)
 
 
 #--------CSV Stuff -----------#
-
+# pd.DataFrame(mydict).to_csv('out.csv', index=False) #dict to CSV
 #name dict of french words and translations
-new_dict = pd.read_csv("./data/french_words.csv").to_dict(orient="records")
 
+# if pd.read_csv('words_to_learn.csv').empty:
+#     new_dict = pd.read_csv("./data/french_words2.csv").to_dict(orient="records")
+
+new_dict = {} #blank dict to hold data set
+
+try:
+    data = pandas.read_csv("./data/words_to_learn.csv") #if there is a learn file already
+except FileNotFoundError:
+    original_data = pandas.read_csv("./data/french_words.csv") #if not, take from original file
+    new_dict = original_data.to_dict(orient="records")
+else:
+    new_dict = data.to_dict(orient="records")
 
 #------- Inserting New French Word -----#
-new_french_word = {} #blank dicr to store current card
+new_french_word = {} #blank dict to store current card
+
+def know_it():
+    if new_french_word in new_dict:
+        new_dict.remove(new_french_word)
+        pd.DataFrame(new_dict).to_csv('./data/words_to_learn.csv', index=False)
+        print(len(new_dict))
+    new_word()
 
 def new_word(): #gen new card, display it, stop timer at start and then restart after display
     global new_french_word, flip_time
     window.after_cancel(flip_time)
+    # new_french_word = random.choice(new_dict)
     new_french_word = random.choice(new_dict)
     canvas.itemconfig(bg_image, image=card_front)
     canvas.itemconfig(french_word, text=new_french_word["French"], fill="black")
@@ -64,7 +86,7 @@ new_word()
 #
 no_button = tk.Button(image=batsu_button, highlightthickness=0, command=new_word)
 no_button.grid(row=2, column=1)
-yes_button = tk.Button(image=maru_button, highlightthickness=0, command=new_word)
+yes_button = tk.Button(image=maru_button, highlightthickness=0, command=know_it)
 yes_button.grid(row=2, column=2)
 
 
