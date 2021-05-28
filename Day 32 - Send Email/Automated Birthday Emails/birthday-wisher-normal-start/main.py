@@ -29,14 +29,14 @@ def write_letter():
 def send_email():
     import smtplib
     #
-    my_email = "INSERT"
-    password = "HERE"
+    my_email = "###Insert Email Login Here"
+    password = "###Insert Email Password Here"
     new_letter = open("./letter_templates/new_letter.txt", "r")
     with smtplib.SMTP("smtp.gmail.com", 587) as connection:
         connection.starttls()
         connection.login(user=my_email, password=password)
         connection.sendmail(from_addr=my_email,
-                        to_addrs="INSERT HERE",
+                        to_addrs="### Insert the FROM Email here.",
                         msg=f"Subject: Happy Birthday!\n\n  {new_letter.read()}")
     new_letter.close()
 
