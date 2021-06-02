@@ -8,7 +8,7 @@ API_KEY = *INSERT HERE
 MY_LAT = **INSERT LAT HERE
 MY_LONG = **INSERT LONG HERE
 PART = "current,minutely,daily,alerts"
-TRILIO_NUMBER = **insert here
+TRILIO_NUMBER = ""
 MY_NUMBER = ""
 
 
