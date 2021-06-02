@@ -2,13 +2,13 @@ import requests
 from twilio.rest import Client
 
 
-account_sid = "AC217bec6b32ed3add88134cb60dedc2ed"
-auth_token = "fa5de62aed9c584b14020017d8ecfb8f"
-API_KEY = "53587566147d448b18222a843f2cbb21"
+account_sid = *INSERT HERE
+auth_token = **INSERT TOKEN
+API_KEY = *INSERT HERE
 MY_LAT = **INSERT LAT HERE
 MY_LONG = **INSERT LONG HERE
 PART = "current,minutely,daily,alerts"
-TRILIO_NUMBER = "+18568884611"
+TRILIO_NUMBER = **insert here
 MY_NUMBER = ""
 
 
