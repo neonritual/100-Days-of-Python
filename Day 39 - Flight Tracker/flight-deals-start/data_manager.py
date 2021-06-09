@@ -1,10 +1,12 @@
 from pprint import pprint
 import requests
-import os
-# FLIGHT_SHEET_API = os.environ.get('FLIGHT_SHEET_API')
+from secrets import *
 
-sheety_endpoint = ""
-# sheety_endpoint = f"https://api.sheety.co/{os.environ.get('FLIGHT_SHEET_API')}/flightDeals/prices"
+
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"{bearer}"
+}
 
 
 class DataManager:
@@ -12,25 +14,19 @@ class DataManager:
     def __init__(self):
         self.get_destination_info()
 
-
     def get_destination_info(self):
-        response = requests.get(sheety_endpoint)
-        sheet = response.json()
-        self.sheet_data = sheet["prices"]
+        response = requests.get(url=sheety_endpoint, headers=headers)
+        response.raise_for_status()
+        self.sheet = response.json()
+        self.sheet_data = self.sheet["prices"]
         return self.sheet_data
 
-    def insert_aitaCode(self, data):
-        new_data = {
-            "prices": {
-                "iataCode": data
-            }
-        }
-        requests.put(url=f"{sheety_endpoint}/2", json=new_data)
 
-    def testing_sheety(self):
-        new_data = {
-            "prices": {
-                "city": "test"
-            }
-        }
-                     json=new_data)
+    # def insert_aitaCode(self, num, data):
+    #     new_data = {
+    #         "price": {
+    #             "iataCode": data,
+    #         }
+    #     }
+    #     requests.put(url=f"{sheety_endpoint}/{num + 2}", json=new_data, headers=headers)
+    #
