@@ -7,7 +7,7 @@ from spotipy.oauth2 import SpotifyOAuth
 # Ask User for special date to look up.
 user_date = input("What date do you want to travel to? YYYY-MM-DD  ")
 
-#Get song data from that date on Billboard Hot 100, and create a list of song titles.
+# Get song data from that date on Billboard Hot 100 using BeautifulSoup, and create a list of song titles.
 response = requests.get(f"https://www.billboard.com/charts/hot-100/{user_date}")
 hot_100 = response.text
 
@@ -15,7 +15,7 @@ soup = BeautifulSoup(hot_100, "html.parser")
 song_data = soup.find_all(class_="chart-element__information__song")
 songs = [song.getText().strip('\n                        ') for song in song_data]
 
-# Generate Spotify API auth, or other just create an instant of SpotiPy.
+# Generate Spotify API auth, or other just create an instance of SpotiPy.
 scope = "playlist-modify-private"
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
         client_id=SPOTIPY_CLIENT_ID,
