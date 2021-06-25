@@ -1,0 +1,56 @@
+question_data =[
+
+      {"category": "General Knowledge", "type": "multiple", "difficulty": "medium",
+       "question": "This field is sometimes known as &ldquo;The Dismal Science.&rdquo;",
+       "correct_answer": "Economics",
+       "incorrect_answers": ["Philosophy", "Politics", "Physics"]},
+      {"category": "General Knowledge", "type": "multiple", "difficulty": "medium",
+       "question": "Which essential condiment is also known as Japanese horseradish?",
+       "correct_answer": "Wasabi ", "incorrect_answers": ["Mentsuyu", "Karashi", "Ponzu"]},
+      {"category": "General Knowledge", "type": "multiple", "difficulty": "medium",
+       "question": "In 2013 how much money was lost by Nigerian scams?",
+       "correct_answer": "$12.7 Billion",
+       "incorrect_answers": ["$95 Million", "$956 Million", "$2.7 Billion"]},
+      {"category": "General Knowledge", "type": "multiple", "difficulty": "medium",
+       "question": "What is the German word for &quot;spoon&quot;?",
+       "correct_answer": "L&ouml;ffel",
+       "incorrect_answers": ["Gabel", "Messer", "Essst&auml;bchen"]},
+      {"category": "General Knowledge", "type": "multiple", "difficulty": "medium",
+       "question": "What is the name of the popular animatronic singing fish prop, singing such hits such as &quot;Don&#039;t Worry, Be Happy&quot;?",
+       "correct_answer": "Big Mouth Billy Bass",
+       "incorrect_answers": ["Big Billy Bass", "Singing Fish", "Sardeen"]},
+      {"category": "General Knowledge", "type": "multiple", "difficulty": "medium",
+       "question": "The term &quot;scientist&quot; was coined in which year?",
+       "correct_answer": "1833", "incorrect_answers": ["1933", "1942", "1796"]},
+      {"category": "General Knowledge", "type": "boolean", "difficulty": "medium",
+       "question": "The term &quot;Spam&quot; came before the food product &quot;Spam&quot;.",
+       "correct_answer": "False", "incorrect_answers": ["True"]},
+      {"category": "General Knowledge", "type": "multiple", "difficulty": "medium",
+       "question": "On average, Americans consume 100 pounds of what per second?",
+       "correct_answer": "Chocolate",
+       "incorrect_answers": ["Potatoes", "Donuts", "Cocaine"]},
+      {"category": "General Knowledge", "type": "multiple", "difficulty": "medium",
+       "question": "What is the last letter of the Greek alphabet?",
+       "correct_answer": "Omega", "incorrect_answers": ["Mu", "Epsilon", "Kappa"]},
+      {"category": "General Knowledge", "type": "multiple", "difficulty": "medium",
+       "question": "The architect known as Le Corbusier was an important figure in what style of architecture?",
+       "correct_answer": "Modernism",
+       "incorrect_answers": ["Neoclassical", "Baroque", "Gothic Revival"]}
+ ]
+
+# question_data = [
+#     {"text": "A slug's blood is green.", "answer": "True"},
+#     {"text": "The loudest animal is the African Elephant.", "answer": "False"},
+#     {"text": "Approximately one quarter of human bones are in the feet.", "answer": "True"},
+#     {"text": "The total surface area of a human lungs is the size of a football pitch.", "answer": "True"},
+#     {"text": "In West Virginia, USA, if you accidentally hit an animal with your car, "
+#              "you are free to take it home to eat.", "answer": "True"},
+#     {"text": "In London, UK, if you happen to die in the House of Parliament, "
+#              "you are entitled to a state funeral.", "answer": "False"},
+#     {"text": "It is illegal to pee in the Ocean in Portugal.", "answer": "True"},
+#     {"text": "You can lead a cow down stairs but not up stairs.", "answer": "False"},
+#     {"text": "Google was originally called 'Backrub'.", "answer": "True"},
+#     {"text": "Buzz Aldrin's mother's maiden name was 'Moon'.", "answer": "True"},
+#     {"text": "No piece of square dry paper can be folded in half more than 7 times.", "answer": "False"},
+#     {"text": "A few ounces of chocolate can to kill a small dog.", "answer": "True"}
+# ]
