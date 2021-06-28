@@ -25,11 +25,11 @@
 # new_list = [new_item for item in list if test]
 #Only performs the code if it passes the Test.
 
-# names = ["Maru", "Takeru", "Luka", "Valerie", "Koyuki"]
-# short_names = [name for name in names if len(name) <= 4]
+# event_names = ["Maru", "Takeru", "Luka", "Valerie", "Koyuki"]
+# short_names = [name for name in event_names if len(name) <= 4]
 # print(short_names)
 #
-# big_long_names = [name.upper() for name in names if len(name) > 4]
+# big_long_names = [name.upper() for name in event_names if len(name) > 4]
 # print(big_long_names)
 
 ##DICTIONARY COMPREHENSION--------------
@@ -39,12 +39,12 @@
 # splits it into key and value, looping through them all
 #you can also add test
 #
-# names = ["Maru", "Takeru", "Luka", "Valerie", "Koyuki"]
+# event_names = ["Maru", "Takeru", "Luka", "Valerie", "Koyuki"]
 #
 # #create a dict that gens a random score for each name/student.
 # import random
 #
-# student_scores = {student:random.randint(1, 100) for student in names}
+# student_scores = {student:random.randint(1, 100) for student in event_names}
 #
 # #Create a dict of students who "passed", ie got a 60 or over.
 #

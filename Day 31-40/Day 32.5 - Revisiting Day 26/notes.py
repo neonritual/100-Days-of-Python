@@ -15,10 +15,10 @@
 # new_list = [n * 2 for n in list] #doubles all numbers in that list
 # print(new_list)
 
-# names = ["Arren", "Ilbraden", "Elq", "Yi"]
-# # short_names = [name for name in names if len(name) < 5] #takes names less than 5 chars
+# event_names = ["Arren", "Ilbraden", "Elq", "Yi"]
+# # short_names = [name for name in event_names if len(name) < 5] #takes event_names less than 5 chars
 # # print(short_names)
-# long_names = [name.upper() for name in names if len(name) >= 5] #takes longer than or equal 5 char names, and makes
+# long_names = [name.upper() for name in event_names if len(name) >= 5] #takes longer than or equal 5 char event_names, and makes
 #                                         # upper case
 # print(long_names)
 
@@ -52,9 +52,9 @@
 
 #challenge: randomly assign student scores, then make dict of passing grades
 # import random
-# names = ["Arren", "Ilbraden", "Elq", "Yi"] #list of student names
+# event_names = ["Arren", "Ilbraden", "Elq", "Yi"] #list of student event_names
 #
-# students = {student: random.randint(1, 100) for student in names} #gens a random 'score' for each student
+# students = {student: random.randint(1, 100) for student in event_names} #gens a random 'score' for each student
 #
 # #create a dict of only students who have a passing score (over or equal 60)
 # passed_students = {student: score for (student, score) in students.items() if score >= 60}
