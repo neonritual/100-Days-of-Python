@@ -6,8 +6,8 @@ from selenium import webdriver
 import time
 
 # These are the guarenteed upload and download speeds of my fictional internet company.
-PROMISED_DOWN = 100
-PROMISED_UP = 10
+PROMISED_DOWN = 100.00
+PROMISED_UP = 10.00
 TWITTER_USERNAME = ""
 TWITTER_PASSWORD = ""
 chrome_driver_path = "/Users/valerie/Documents/chromedriver"
@@ -23,13 +23,14 @@ class InternetSpeedBot():
         self.down_speed = 0
 
 
-    def tweet(self, down, up):
+    def tweet(self):
+
         self.driver.get("https://www.twitter.com")
         time.sleep(4)
         login_button = self.driver.find_element_by_link_text("Log in")
         login_button.click()
 
-        time.sleep(3)
+        time.sleep(2)
 
         input_username = self.driver.find_element_by_name("session[username_or_email]")
         input_username.send_keys(TWITTER_USERNAME)
@@ -43,13 +44,14 @@ class InternetSpeedBot():
 
         time.sleep(2)
 
-
+        print(self.down_speed)
+        print(self.up_speed)
 
         tweet_field = self.driver.find_element_by_xpath(
             '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/label/div[1]/div/div/div/div/div[2]/div'
                                                         )
         tweet_field.send_keys(
-        f"Hey random ISP, why is my speed {down.text} down and and {up.text} up when I pay for 100down/10up?")
+        f"Hey random ISP, why is my speed {self.down_speed} down and {self.up_speed} up when I pay for 100down/10up?")
 
         send_tweet_button = self.driver.find_element_by_xpath(
             '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[3]/div/div/div[2]/div[3]/div/span/span'
@@ -62,17 +64,16 @@ class InternetSpeedBot():
         go_button = self.driver.find_element_by_class_name("start-text")
         go_button.click()
 
-        time.sleep(60)
+        time.sleep(50)
         self.down_speed = self.driver.find_element_by_xpath(
             '//*[@id="container"]/div/div[3]/div/div/div/div[2]/div[3]/div[3]/div/div[3]/div/div/div[2]/div[1]/div[2]/div/div[2]/span'
-        )
+        ).text
         self.up_speed = self.driver.find_element_by_xpath(
             '//*[@id="container"]/div/div[3]/div/div/div/div[2]/div[3]/div[3]/div/div[3]/div/div/div[2]/div[1]/div[3]/div/div[2]/span'
-        )
+        ).text
 
-
-        if float(self.up_speed.text) < PROMISED_UP or float(self.down_speed.text) < PROMISED_DOWN:
-            self.tweet(self.down_speed, self.up_speed)
+        if float(self.up_speed) < PROMISED_UP or float(self.down_speed) < PROMISED_DOWN:
+            self.tweet()
 
 
 
