@@ -7,11 +7,7 @@ yc_web_page = response.text
 
 soup = BeautifulSoup(yc_web_page, "html.parser")
 
-## TO Get all the Story Titles:
-# stories = soup.select(selector=".storylink")
-# for story in stories:
-#     print(story.getText())
-#
+
 articles = soup.find_all(name="a", class_="storylink")
 article_texts = []
 article_links = []
@@ -26,8 +22,7 @@ article_upvotes = [int(score.getText().strip(' points')) for score in soup.find_
 ## Find article w/ most upvotes and it's index.
 max_upvotes = max(article_upvotes)
 max_upvotes_index = article_upvotes.index(max_upvotes)
-# print(max_upvotes)
-# print(max_upvotes_index)
+
 
 print(article_texts[max_upvotes_index])
 print(article_links[max_upvotes_index])

@@ -10,6 +10,7 @@ SIMILAR_ACCOUNT = "healthy_life_log"
 USERNAME = "my username goes here"
 PASSWORD = "my pssword goes here"
 
+
 class InstaFollower():
     def __init__(self):
         # Initialize driver.
@@ -37,6 +38,7 @@ class InstaFollower():
         dont_save_info_button.click()
 
     def find_followers(self):
+        # Open the follower list of the similar account.
         self.driver.get(f"http://instagram.com/{SIMILAR_ACCOUNT}")
         time.sleep(2)
         open_follower_page = self.driver.find_element_by_xpath(
@@ -49,6 +51,7 @@ class InstaFollower():
         time.sleep(3)
 
     def follow(self):
+        # Follow the accounts in the similar account's follower list, except in the case you are already following that account.
         all_followers = self.driver.find_elements_by_css_selector("li button")
         for follower in all_followers:
             try:
